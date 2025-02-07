@@ -15,8 +15,8 @@ function calculateFinalMark() {
     
     document.getElementById("result").innerHTML = `
       <h2>Final Mark for ${subject}</h2>
-      <p><strong>Student:</strong> ${firstName} ${surname} (Student Number: ${studentNumber})</p>
-      <p><strong>Final Mark:</strong> ${finalMark.toFixed(2)}</p>
+      <p>Student: ${firstName} ${surname}  ${studentNumber}</p>
+      <p>Final Mark: ${finalMark.toFixed(2)}</p>
     `;
   }
   
