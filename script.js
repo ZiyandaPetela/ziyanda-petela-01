@@ -1,31 +1,27 @@
 function calculateFinalMark() {
-    const firstName = document.getElementById('firstName').value;
-    const surname = document.getElementById('surname').value;
-    const studentNumber = document.getElementById('studentNumber').value;
-    const yearMark = parseFloat(document.getElementById('yearMark').value);
-    const examMark = parseFloat(document.getElementById('examMark').value);
+    const subject = document.getElementById("subject").value;
+    const firstName = document.getElementById("firstName").value;
+    const surname = document.getElementById("surname").value;
+    const studentNumber = document.getElementById("studentNumber").value;
+    const yearMark = parseFloat(document.getElementById("yearMark").value);
+    const examMark = parseFloat(document.getElementById("examMark").value);
   
-    if (isNaN(yearMark) || isNaN(examMark)) {
-      alert("Please enter valid numeric values for year and exam marks.");
-      return;
-    }
-  
-    if (yearMark < 0 || yearMark > 100 || examMark < 0 || examMark > 100) {
-      alert("Marks should be between 0 and 100.");
+    if (!subject || !firstName || !surname || !studentNumber || isNaN(yearMark) || isNaN(examMark)) {
+      alert("Please fill in all fields correctly.");
       return;
     }
   
     const finalMark = (0.6 * examMark) + (0.4 * yearMark);
-  
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `
-      <p>Student: ${firstName} ${surname} (${studentNumber})</p>
-      <p>Final Mark: <strong>${finalMark.toFixed(2)}%</strong></p>
+    
+    document.getElementById("result").innerHTML = `
+      <h2>Final Mark for ${subject}</h2>
+      <p><strong>Student:</strong> ${firstName} ${surname} (Student Number: ${studentNumber})</p>
+      <p><strong>Final Mark:</strong> ${finalMark.toFixed(2)}</p>
     `;
   }
   
   function clearForm() {
-    document.getElementById('markForm').reset();
-    document.getElementById('result').innerHTML = '';
+    document.getElementById("calculatorForm").reset();
+    document.getElementById("result").innerHTML = "";
   }
   

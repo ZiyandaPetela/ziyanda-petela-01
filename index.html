@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Student Final Mark Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Student Final Mark Calculator</h1>
-    <form id="markForm">
+    <form id="calculatorForm">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" required >
+      
       <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" required />
-
+      <input type="text" id="firstName" required p>
+      
       <label for="surname">Surname:</label>
-      <input type="text" id="surname" required />
-
+      <input type="text" id="surname" required >
+      
       <label for="studentNumber">Student Number:</label>
-      <input type="text" id="studentNumber" required />
-
+      <input type="text" id="studentNumber" required >
+      
       <label for="yearMark">Year Mark:</label>
-      <input type="number" id="yearMark" min="0" max="100" required />
-
+      <input type="number" id="yearMark" required >
+      
       <label for="examMark">Exam Mark:</label>
-      <input type="number" id="examMark" min="0" max="100" required />
-
+      <input type="number" id="examMark" required >
+      
       <div class="button-group">
         <button type="button" onclick="calculateFinalMark()">Calculate Final Mark</button>
         <button type="button" onclick="clearForm()">Clear Form</button>
@@ -33,6 +36,7 @@
 
     <div id="result" class="result"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
